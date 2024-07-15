@@ -1,0 +1,149 @@
+.navbar{
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo
+{
+    width: 170px;
+}
+
+.nav-menu
+{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+    color: #49557e;
+}
+
+.nav-menu li
+{
+    cursor: pointer;
+}
+
+.nav-right
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    font-size: 18px;
+   
+}
+
+.navbar button{
+    
+    color: #F77502; 
+    border: 1px solid #F77502 ; 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+
+    background: transparent;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.navbar button:hover
+{
+    transform: scale(1.2);
+    background: #F77502;
+    color: white;
+}
+
+.navbar .active{
+     padding-bottom:2px;
+     border-bottom: 2px solid #F77502;
+}
+
+.navbar-search-icon
+{
+    position: relative;
+}
+
+.navbar-search-icon .dot
+{
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: #F77502;
+    border-radius: 5px;
+    top: -5px;
+    left: 25px;
+}
+
+@media (max-width:1050px){
+    .navbar .logo
+    {
+        width: 140px;
+    }
+
+    .nav-menu
+    {
+        gap: 20px;
+        font-size: 17px;
+    }
+
+    .nav-right
+    {
+        gap: 20px;
+    }
+
+    .nav-right img
+    {
+        width: 22px;
+    }
+
+    .nav-right button
+    {
+        padding: 8px 25px;
+    }
+}
+
+@media (max-width:900px){
+    .navbar .logo
+    {
+        width: 120px;
+    }
+
+    .nav-menu
+    {
+        gap: 15px;
+        font-size: 16px;
+    }
+
+    .nav-right
+    {
+        gap: 20px;
+    }
+
+    .nav-right img
+    {
+        width: 20px;
+    }
+
+    .nav-right button
+    {
+        padding: 7px 20px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width:750px){
+  
+    .nav-menu
+    {
+       display: none;
+    }
+}
