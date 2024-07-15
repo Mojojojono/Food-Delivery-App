@@ -36,12 +36,15 @@ const Login = ({ setShowLogin }) => {
         {currentState === "Login" ? (
           <p>
             Create a new account?
-            <span onClick={() => setCurrentState("Sign Up")}>Click here</span>
+            <span className="span" onClick={() => setCurrentState("Sign Up")}>
+              Click here
+            </span>
           </p>
         ) : (
           <p>
             Already hava an account?
             <span
+              className="span"
               onClick={() => {
                 setCurrentState("Login");
               }}
