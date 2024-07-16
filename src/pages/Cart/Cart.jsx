@@ -3,7 +3,8 @@ import "./Cart.css";
 import { StoreContext } from "../../components/Context/StoreContext";
 
 const Cart = () => {
-  const { food_list, cartItems, removeFromCart } = useContext(StoreContext);
+  const { food_list, cartItems, removeFromCart, getTotalCartAmount } =
+    useContext(StoreContext);
 
   return (
     <div className="cart">
@@ -21,8 +22,8 @@ const Cart = () => {
         {food_list.map((item, index) => {
           if (cartItems[item._id] > 0) {
             return (
-              <div>
-                <div key={index} className="cart-items-title cart-items-item">
+              <div key={index}>
+                <div className="cart-items-title cart-items-item">
                   <img src={item.image} alt="" />
                   <p>{item.name}</p>
                   <p>${item.price}</p>
@@ -37,6 +38,38 @@ const Cart = () => {
             );
           }
         })}
+      </div>
+      <div className="cart-bottom">
+        <div className="cart-total">
+          <h2>Cart Total</h2>
+          <div>
+            <div className="cart-total-details">
+              <p>Subtotal</p>
+              <p>${getTotalCartAmount()}</p>
+            </div>
+            <hr />
+            <div className="cart-total-details">
+              <p>Delivery Fee</p>
+              <p>${5}</p>
+            </div>
+            <hr />
+            <div className="cart-total-details">
+              <p>Total</p>
+              <b>${getTotalCartAmount() + 5}</b>
+            </div>
+            <hr />
+          </div>
+          <button>Proceed to Checkout</button>
+        </div>
+        <div className="cart-promocode">
+          <div>
+            <p>If you have a promo code, Enter it here</p>
+            <div className="promo-input">
+              <input type="text" placeholder="Promo Code" />
+              <button>Submit</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
